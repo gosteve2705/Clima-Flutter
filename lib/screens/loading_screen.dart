@@ -15,7 +15,6 @@ class _LoadingScreenState extends State<LoadingScreen> {
     print('latitude : ${location.latitude} longitude : ${location.longitude}');
   }
 
-
   @override
   void initState() {
     super.initState();
