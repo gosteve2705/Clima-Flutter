@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:clima/services/location.dart';
+import 'package:http/http.dart';
 
 class LoadingScreen extends StatefulWidget {
   @override
@@ -13,6 +14,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
     await location.getCurrentLocation();
     print('latitude : ${location.latitude} longitude : ${location.longitude}');
   }
+
 
   @override
   void initState() {
