@@ -4,6 +4,15 @@ import 'package:clima/services/networking.dart';
 const apiKey = '87c6264cd1917ad7cad0b9bbb97ba0ff';
 
 class WeatherModel {
+  Future<dynamic> getCityWeather(String cityName) async {
+    NetworkHelper networkHelper = NetworkHelper(
+        url:
+            'https://api.openweathermap.org/data/2.5/weather?q=$cityName&appid=$apiKey&units=metric');
+
+    var weatherData = await networkHelper.getData();
+    return weatherData;
+  }
+
   Future<dynamic> getLocationWeather() async {
     //Get the current location
     Location location = Location();
@@ -45,7 +54,7 @@ class WeatherModel {
     } else if (temp < 10) {
       return 'You\'ll need 🧣 and 🧤';
     } else {
-      return 'Bring a 🧥 just in case';
+      return 'Bring a 🧥🧣 just in case';
     }
   }
 }
